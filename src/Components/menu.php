@@ -18,6 +18,9 @@
                     </li>
                 </ul>
             </div>
+            <div class="ml-auto">
+                <a class="btn btn-danger" href="../loginAccount.php">Desconectar</a>
+            </div>
         </div>
     </nav>
 </div>
