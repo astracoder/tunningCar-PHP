@@ -15,8 +15,19 @@
         <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 m-3 p-3">
-            <h1 class="text-center mb-3">Drazic Tunning Car</h1>
-            <h4 class="text-light bg-dark">Lista de carros</h4>
+            <h1 class="text-center mb-3">Cadastro de serviço</h1>
+            <form action="Database/dbLogin/validateLoginAccount.php" method="post">
+            <div class="mb-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="Digite o seu e-mail...">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">Senha</label>
+                    <input class="form-control" type="password" name="password" placeholder="Digite a sua senha...">
+                </div>
+                <input class="btn btn-outline-dark" type="button" value="Limpar">
+                <input class="btn btn-danger" type="submit" value="Login">
+            </form>
         </div>
     </div>
 </body>

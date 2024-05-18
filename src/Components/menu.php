@@ -5,21 +5,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Início</a>
+                        <a class="nav-link active text-danger" aria-current="page" href="index.php">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="cars.php">Carros</a>
+                        <a class="nav-link active text-danger" aria-current="page" href="cars.php">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="parts.php">Peças</a>
+                        <a class="nav-link active text-danger" aria-current="page" href="mechanics.php">Mecanicos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="mechanics.php">Mecanicos</a>
+                        <a class="nav-link active text-danger" aria-current="page" href="parts.php">Peças</a>
                     </li>
                 </ul>
             </div>
             <div class="ml-auto">
-                <a class="btn btn-danger" href="../loginAccount.php">Desconectar</a>
+                <?php 
+                    session_start();
+                    if(isset($_SESSION['email'])) echo '<span class="m-3 text-light">' . $_SESSION['email'] . '</span>'; 
+                ?>
+                <a class="btn btn-danger" href="../loginAccount.php">Logout</a>
             </div>
         </div>
     </nav>

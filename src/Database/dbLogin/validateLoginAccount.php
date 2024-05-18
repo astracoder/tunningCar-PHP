@@ -10,6 +10,9 @@
             $resultValidateAccount = $database->query($validateAccount);
 
             if($resultValidateAccount->num_rows > 0) {
+                session_start();
+                $_SESSION['email'] = $email;
+
                 header('location: ../../App/index.php');
                 exit();
             } else {

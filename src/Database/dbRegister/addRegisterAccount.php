@@ -36,21 +36,31 @@
 
                 header('location: ../../registerAccount.php');
                 exit();
+            } else if($resultValidateEmail->num_rows > 0 && $resultValidateUser->num_rows) {
+                session_start();
+                $_SESSION['errorEmail'] = "E-mail já existente, digite outro.";
+                $_SESSION['errorUser'] = "Usuário já existente, digite outro.";
+
+                header('location: ../../registerAccount.php');
+                exit();
             } else if(strlen($password) < 6) {
                 session_start();
                 $_SESSION['errorPassword'] = "Senha deve ter no minímo 6 caracteres.";
 
                 header('location: ../../registerAccount.php');
                 exit();
-            }   
+            }
 
             if(!isset($_SESSION['errorEmail']) OR !isset($_SESSION['errorUser']) OR !isset($_SESSION['errorPassword'])) {
                 $sql = "INSERT INTO register (email, user, password) VALUES ('$email', '$user', '$password')";
+
+                session_start();
+                $_SESSION['username'] = $user;
         
                 $database->query($sql);
                 $database->close();
 
-                header('location: ../../loginAccount.php');
+                header('location: ../../registerAccountSuccess.php');
                 exit();
             }
         } else {

@@ -19,7 +19,7 @@
             <form action="Database/dbRegister/addRegisterAccount.php" method="post">
             <div class="mb-3">
                     <label class="form-label" for="email">Email</label>
-                    <input class="form-control" type="email" name="email" placeholder="Digite o seu melhor e-mail...">
+                    <input class="form-control" id="email" type="email" name="email" placeholder="Digite o seu melhor e-mail...">
                     <?php 
                         session_start();
                         if(isset($_SESSION['errorEmail'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorEmail'] . '</p>'; 
@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="user">Usuário</label>
-                    <input class="form-control" type="text" name="user" placeholder="Digite o seu usuário...">
+                    <input class="form-control" id="user" type="text" name="user" placeholder="Digite o seu usuário...">
                     <?php 
                         session_start();
                         if(isset($_SESSION['errorUser'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorUser'] . '</p>'; 
@@ -37,7 +37,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="password">Senha</label>
-                    <input class="form-control" type="password" name="password" placeholder="Digite a sua melhor senha...">
+                    <input class="form-control" id="password" type="password" name="password" placeholder="Digite a sua melhor senha...">
                     <?php 
                         session_start();
                         if(isset($_SESSION['errorPassword'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorPassword'] . '</p>'; 
@@ -50,12 +50,14 @@
                     ?>
                 </div>
 
-                <input class="btn btn-outline-dark" type="button" value="Limpar">
+                <input onclick="" id="clean" class="btn btn-outline-dark" type="button" value="Limpar">
                 <input class="btn btn-danger" type="submit" value="Registrar">
             </form>
         </div>
         <div class="col-md-3"></div><!-- Div vazia -->
         </div>
     </div>
+
+    <script src="Scripts/cleanFields.js"></script>
 </body>
 </html>

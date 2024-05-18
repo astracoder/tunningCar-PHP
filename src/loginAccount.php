@@ -35,7 +35,6 @@
                         if(isset($_SESSION['errorFields'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorFields'] . '</p>'; 
                         unset($_SESSION['errorFields']);
                 ?>
-                <input class="btn btn-outline-dark" type="button" value="Limpar">
                 <input class="btn btn-danger" type="submit" value="Login">
             </form>
         </div>
