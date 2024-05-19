@@ -7,7 +7,11 @@
 </p>
 
 <p>
-  Projeto da faculdade de ADS, é o desenvolvimento de um sistema de tunning de carros, nesse sistema tem a opçãao de registrar uma conta, fazer login, cadastrar mecânicos, editar e remover. Futuramente vou adicionar mais funcionalidades.
+  O sistema Drazic Tunning Cars foi desenvolvido com o objetivo de gerenciar serviços de modificação de veículos. Esse sistema permite o cadastro de carros dos clientes, vinculando cada veículo a um mecânico responsável e às peças que serão   utilizadas nas modificações.
+</p>
+
+<p>
+    O Drazic Tunning Cars será uma ferramenta útil para o armazenamento e organização das informações relacionadas aos clientes, serviços e peças da oficina.
 </p>
 
 - ✔ Registrar conta
@@ -15,6 +19,7 @@
 - ✔ Criar mecânico
 - ✔ Editar mecânico
 - ✔ Remover mecênico
+- Em breve mais funcionalidades...
 
 - <img src="/wp1.png">
 - <img src="/wp2.png">
