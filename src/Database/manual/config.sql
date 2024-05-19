@@ -7,10 +7,14 @@ create table register(
     password varchar(255) not null
 )
 
-/* SQL CREATE LOGIN TABLE */
+/* SQL CREATE MECHANICS TABLE */
 
-create table login(
+create table mechanics(
     id integer auto_increment primary key,
-	email varchar(255) not null,
-    password varchar(255) not null
+    firstName varchar(255) not null,
+    lastName varchar(255) not null,
+    age integer not null,
+    emailMechanic varchar(255) not null,
+    gender char(1) not null,
+    specialty varchar(255) not null
 )

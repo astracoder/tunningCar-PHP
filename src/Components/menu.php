@@ -8,7 +8,7 @@
                         <a class="nav-link active text-danger" aria-current="page" href="index.php">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-danger" aria-current="page" href="cars.php">Serviços</a>
+                        <a class="nav-link active text-danger" aria-current="page" href="services.php">Serviços</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-danger" aria-current="page" href="mechanics.php">Mecanicos</a>
