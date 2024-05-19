@@ -32,18 +32,33 @@
             <div class="mb-3">
                 <label for="firstName" class="form-label">Nome</label>
                 <input type="text" class="form-control" name="firstName" value="<?php echo $mechanic['firstName']; ?>">
+                <?php 
+                    session_start();
+                    if(isset($_SESSION['errorFirstName'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorFirstName'] . '</p>'; 
+                    unset($_SESSION['errorFirstName']);
+                ?>
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Sobrenome</label>
                 <input type="text" class="form-control" name="lastName" value="<?php echo $mechanic['lastName']; ?>">
+                <?php 
+                    session_start();
+                    if(isset($_SESSION['errorLastName'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorLastName'] . '</p>'; 
+                    unset($_SESSION['errorLastName']);
+                ?>
             </div>
             <div class="mb-3">
                 <label for="age" class="form-label">Idade</label>
                 <input type="text" class="form-control" name="age" value="<?php echo $mechanic['age']; ?>">
+                <?php 
+                    session_start();
+                    if(isset($_SESSION['errorAge'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorAge'] . '</p>'; 
+                    unset($_SESSION['errorAge']);
+                ?>
             </div>
             <div class="mb-3">
                 <label for="emailMechanic" class="form-label">E-mail</label>
-                <input type="email" class="form-control" name="emailMechanic" value="<?php echo $mechanic['email']; ?>">
+                <input type="email" class="form-control" name="emailMechanic" value="<?php echo $mechanic['emailMechanic']; ?>">
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="gender" value="M" <?php echo $mechanic['gender'] == 'M' ? 'checked' : ''; ?>>
@@ -63,6 +78,11 @@
                     <option value="Estetica automotiva" <?php echo $mechanic['specialty'] == 'Estetica automotiva' ? 'selected' : ''; ?>>Estética automotiva</option>
                 </select>
             </div>
+            <?php 
+                session_start();
+                if(isset($_SESSION['errorFields'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorFields'] . '</p>'; 
+                unset($_SESSION['errorFields']);
+            ?>
             <a href="./mechanics.php" class="btn btn-primary">Voltar</a>
             <button type="submit" class="btn btn-success">Salvar alterações</button>
         </form>

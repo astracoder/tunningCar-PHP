@@ -6,7 +6,7 @@
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $age = $_POST['age'];
-            $email = $_POST['emailMechanic'];
+            $emailMechanic = $_POST['emailMechanic'];
             $gender = $_POST['gender'];
             $specialty = $_POST['specialty'];
 
@@ -26,11 +26,10 @@
             }
 
             if(!isset($_SESSION['errorFirstName']) OR !isset($_SESSION['errorLastName']) OR !isset($_SESSION['errorAge'])) {
-                $sql = "INSERT INTO mechanics (firstName, lastName, age, emailMechanic, gender, specialty) VALUES ('$firstName', '$lastName', '$age', '$emailMechanics', '$gender', '$specialty')";
+                $sql = "INSERT INTO mechanics (firstName, lastName, age, emailMechanic, gender, specialty) VALUES ('$firstName', '$lastName', '$age', '$emailMechanic', '$gender', '$specialty')";
         
                 $database->query($sql);
                 $database->close();
-                $sql = "SELECT firstName, lastName, age, email, gender, specialty FROM mecanicos";
 
                 header('location: ../../App/mechanics.php');
                 exit();

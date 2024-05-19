@@ -50,7 +50,7 @@
                     ?>
                 </div>
 
-                <input onclick="" id="clean" class="btn btn-outline-dark" type="button" value="Limpar">
+                <input id="clean" class="btn btn-outline-dark" type="button" value="Limpar">
                 <input class="btn btn-danger" type="submit" value="Registrar">
             </form>
         </div>

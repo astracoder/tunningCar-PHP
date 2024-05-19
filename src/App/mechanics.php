@@ -19,7 +19,7 @@
             <form action="../../src/Database/dbMechanics/addMechanic.php" method="post">
                 <div class="mb-3">
                     <label class="form-label" for="firstName">Nome</label>
-                    <input class="form-control" type="text" name="firstName" placeholder="Digite o nome...">
+                    <input class="form-control" id="firstName" type="text" name="firstName" placeholder="Digite o nome...">
                     <?php 
                         session_start();
                         if(isset($_SESSION['errorFirstName'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorFirstName'] . '</p>'; 
@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="lastName">Sobrenome</label>
-                    <input class="form-control" type="text" name="lastName" placeholder="Digite o sobrenome...">
+                    <input class="form-control" id="lastName" type="text" name="lastName" placeholder="Digite o sobrenome...">
                     <?php 
                         session_start();
                         if(isset($_SESSION['errorLastName'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorLastName'] . '</p>'; 
@@ -37,7 +37,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="age">Idade</label>
-                    <input class="form-control" type="text" name="age" placeholder="Digite a idade...">
+                    <input class="form-control" id="age" type="text" name="age" placeholder="Digite a idade...">
                     <?php 
                         session_start();
                         if(isset($_SESSION['errorAge'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorAge'] . '</p>'; 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="emailMechanic">E-mail</label>
-                    <input class="form-control" type="email" name="emailMechanic" placeholder="Digite o e-mail...">
+                    <input class="form-control" id="emailMechanic" type="email" name="emailMechanic" placeholder="Digite o e-mail...">
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" value="M" required checked>
@@ -72,53 +72,57 @@
                     if(isset($_SESSION['errorFields'])) echo '<p class="alert alert-danger mt-2">' . $_SESSION['errorFields'] . '</p>'; 
                     unset($_SESSION['errorFields']);
                 ?>
-                <input class="btn btn-outline-dark" type="button" value="Limpar campos">
+                <input id="cleanBtn" class="btn btn-outline-dark" type="button" value="Limpar campos">
                 <input class="btn btn-success" type="submit" value="Cadastrar">
             </form>
         </div>
     </div>
+    <div class="container">
+        <?php
+            include '../Database/connection.php';
 
-    <?php
-        include '../Database/connection.php';
+            $sql = "SELECT id, firstName, lastName, age, emailMechanic, gender, specialty FROM mechanics";
+            $resultMechanics = $database->query($sql);
 
-        $sql = "SELECT firstName, lastName, age, emailMechanic, gender, specialty FROM mechanics";
-        $resultMechanics = $database->query($sql);
+            $mechanics = []; //Array de mecanicos
 
-        $mechanics = []; //Array de mecanicos
-
-        //Colocando todos os registros de mecanicos no array
-        if ($resultMechanics->num_rows > 0) {
-            while($row = $resultMechanics->fetch_assoc()) {
-                $mechanics[] = $row;
+            //Colocando todos os registros de mecanicos no array
+            if ($resultMechanics->num_rows > 0) {
+                while($row = $resultMechanics->fetch_assoc()) {
+                    $mechanics[] = $row;
+                }
             }
-        }
 
-        //Se houver
-        if (!empty($mechanics)) {
-            echo '<table class="table table-striped">';
-            echo '<thead><tr><th>Nome</th><th>Sobrenome</th><th>Idade</th><th>E-mail</th><th>Gênero</th><th>Especialidade</th></tr></thead>';
-            echo '<tbody>';
-            foreach ($mechanics as $mechanic) {
-                echo '<tr>';
-                echo '<td>' . $mechanic['firstName'] . '</td>';
-                echo '<td>' . $mechanic['lastName'] . '</td>';
-                echo '<td>' . $mechanic['age'] . '</td>';
-                echo '<td>' . $mechanic['email'] . '</td>';
-                echo '<td>' . ($mechanic['gender'] == 'M' ? 'Masculino' : 'Feminino') . '</td>';
-                echo '<td>' . $mechanic['specialty'] . '</td>';
-                echo '<td>
-                        <a href="editMechanic.php?id=' . $mechanic['id'] . '" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="deleteMechanic.php?id=' . $mechanic['id'] . '" class="btn btn-danger btn-sm">Excluir</a>
-                    </td>';
-                echo '</tr>';
+            //Se houver
+            if (!empty($mechanics)) {
+                echo '<table class="table table-striped">';
+                echo '<thead><tr><th>ID</th><th>Nome</th><th>Sobrenome</th><th>Idade</th><th>E-mail</th><th>Gênero</th><th>Especialidade</th></tr></thead>';
+                echo '<tbody>';
+                foreach ($mechanics as $mechanic) { //Loop no array e pegando registro por registro e colcando nas tabelas
+                    echo '<tr>';
+                    echo '<td>' . $mechanic['id'] . '</td>';
+                    echo '<td>' . $mechanic['firstName'] . '</td>';
+                    echo '<td>' . $mechanic['lastName'] . '</td>';
+                    echo '<td>' . $mechanic['age'] . '</td>';
+                    echo '<td>' . $mechanic['emailMechanic'] . '</td>';
+                    echo '<td>' . ($mechanic['gender'] == 'M' ? 'Masculino' : 'Feminino') . '</td>';
+                    echo '<td>' . $mechanic['specialty'] . '</td>';
+                    echo '<td>
+                            <a href="editMechanic.php?id=' . $mechanic['id'] . '"class="btn btn-primary btn-sm">Editar</a>
+                            <a href="deleteMechanic.php?id=' . $mechanic['id'] . '"class="btn btn-danger btn-sm">Excluir</a>
+                        </td>';
+                    echo '</tr>';
+                }
+                echo '</tbody></table>';
+            } else {
+                echo '<table class="table table-striped">';
+                echo '<thead><tr><th>ID</th><th>Nome</th><th>Sobrenome</th><th>Idade</th><th>E-mail</th><th>Gênero</th><th>Especialidade</th></tr></thead>';
+                echo '<tbody>';
+                echo '</tbody></table>';
             }
-            echo '</tbody></table>';
-        } else {
-            echo '<table class="table table-striped">';
-            echo '<thead><tr><th>Nome</th><th>Sobrenome</th><th>Idade</th><th>E-mail</th><th>Gênero</th><th>Especialidade</th></tr></thead>';
-            echo '<tbody>';
-            echo '</tbody></table>';
-        }
-    ?>
+        ?>
+    </div>
+
+    <script src="../Scripts/cleanFieldsMechanic.js"></script>
 </body>
 </html>
