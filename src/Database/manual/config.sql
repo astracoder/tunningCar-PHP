@@ -1,20 +1,21 @@
-/* SQL CREATE REGISTER TABLE */
+/* SQL CREATE DATABASE */
+CREATE DATABASE drazictunningcar;
 
-create table register(
-    id integer auto_increment primary key,
-	email varchar(255) not null,
-    user varchar(255) not null,
-    password varchar(255) not null
+/* SQL CREATE REGISTER TABLE */
+CREATE TABLE register(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+	email VARCHAR(255) NOT NULL,
+    user VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 )
 
 /* SQL CREATE MECHANICS TABLE */
-
-create table mechanics(
-    id integer auto_increment primary key,
-    firstName varchar(255) not null,
-    lastName varchar(255) not null,
-    age integer not null,
-    emailMechanic varchar(255) not null,
-    gender char(1) not null,
-    specialty varchar(255) not null
+CREATE TABLE mechanics(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    age INTEGER NOT NULL,
+    emailMechanic VARCHAR(255) NOT NULL,
+    gender CHAR(1) NOT NULL,
+    specialty VARCHAR(255) not null
 )
