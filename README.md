@@ -15,3 +15,7 @@
 - ✔ Criar mecânico
 - ✔ Editar mecânico
 - ✔ Remover mecênico
+
+- <img src="/wp1.png">
+- <img src="/wp2.png">
+- <img src="/wp4.png">
