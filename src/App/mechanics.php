@@ -15,7 +15,7 @@
         <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 m-3 p-3">
-            <h1 class="text-center mb-3 pb-3 border-bottom border-2">Cadastro de mecânico</h1>
+            <h1 class="text-center mb-3 pb-3 border-bottom border-2">Cadastro de mecânicos</h1>
             <form action="../../src/Database/dbMechanics/addMechanic.php" method="post">
                 <div class="mb-3">
                     <label class="form-label" for="firstName">Nome</label>
