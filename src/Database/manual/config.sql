@@ -19,3 +19,12 @@ CREATE TABLE mechanics(
     gender CHAR(1) NOT NULL,
     specialty VARCHAR(255) not null
 )
+
+/* SQL CREATE PARTS TABLE */
+
+CREATE TABLE parts(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    partBrand VARCHAR(255) NOT NULL,
+    partModel VARCHAR(255 NOT NULL)
+    fabricationDate DATE NOT NULL,
+)
