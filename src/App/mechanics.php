@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <title>Drazic Tunning Car - Mecânicos</title>
+    <title>Drazic Tunning Car - Cadastro de mecânicos</title>
 </head>
 <body>
     <?php
@@ -56,7 +56,7 @@
                     <input class="form-check-input" type="radio" name="gender" value="F">
                     <label class="form-check-label" for="gender">Feminino</label>
                 </div>
-                <div class="mb-3">
+                <div class="mt-3 mb-3">
                     <label class="form-label" for="specialty">Especialidade</label>
                     <select class="form-select" name="specialty" required>
                         <option disabled selected>Selecione uma especialidade</option>
@@ -73,7 +73,7 @@
                     unset($_SESSION['errorFields']);
                 ?>
                 <input id="cleanBtn" class="btn btn-outline-dark" type="button" value="Limpar campos">
-                <input class="btn btn-success" type="submit" value="Cadastrar">
+                <input class="btn btn-success" type="submit" value="Cadastrar mecânico">
             </form>
         </div>
     </div>

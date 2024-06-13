@@ -50,7 +50,7 @@
                     ?>
                 </div>
 
-                <input id="clean" class="btn btn-outline-dark" type="button" value="Limpar">
+                <input id="cleanBtn" class="btn btn-outline-dark" type="button" value="Limpar">
                 <input class="btn btn-danger" type="submit" value="Registrar">
             </form>
         </div>
@@ -58,6 +58,6 @@
         </div>
     </div>
 
-    <script src="Scripts/cleanFields.js"></script>
+    <script src="Scripts/cleanFieldsRegister.js"></script>
 </body>
 </html>

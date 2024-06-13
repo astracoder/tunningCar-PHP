@@ -84,7 +84,7 @@
                 unset($_SESSION['errorFields']);
             ?>
             <a href="./mechanics.php" class="btn btn-primary">Voltar</a>
-            <button type="submit" class="btn btn-success">Salvar alterações</button>
+            <button type="submit" class="btn btn-success">Editar informações</button>
         </form>
     </div>
 </body>
