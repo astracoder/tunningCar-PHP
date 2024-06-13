@@ -15,7 +15,7 @@
         <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 m-3 p-3">
-            <h1 class="text-ceCleanednter mb-3 pb-3 border-bottom border-2">Cadastro de peças</h1>
+            <h1 class="text-center mb-3 pb-3 border-bottom border-2">Cadastro de peças</h1>
             <form action="../../src/Database/dbParts/addParts.php" method="post">
                 <div class="mb-3">
                     <label class="form-label" for="partBrand">Marca da peça</label>
@@ -49,7 +49,10 @@
             </form>
         </div>
     </div>
+
     <div class="container">
+    <h4 class="text-white bg-secondary text-left mt-5 mb-3 border-bottom border-1 rounded p-3">Gerenciamento de peças</h4>
+
         <?php
             include '../Database/connection.php';
 

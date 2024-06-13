@@ -78,6 +78,7 @@
         </div>
     </div>
     <div class="container">
+    <h4 class="text-white bg-secondary text-left mt-5 mb-3 border-bottom border-1 rounded p-3">Gerenciamento de mecânicos</h4>
         <?php
             include '../Database/connection.php';
 
