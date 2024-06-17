@@ -168,7 +168,7 @@
                 echo '<td>' . $service['plateCarClient'] . '</td>';
                 echo '<td>' . $service['namePart'] . '</td>';
                 echo '<td>
-                    <a href="deleteService.php?id=' . $service['id'] . '"class="btn btn-danger btn-sm">Cancelar serviço</a>
+                    <a href="deleteService.php?id=' . $service['id'] . '"class="btn btn-danger btn-sm">Cancelar</a>
                 </td>';
                 echo '</tr>';
             }
@@ -181,5 +181,6 @@
         }
     ?>
 
+    <script src="../Scripts/cleanFieldsServices.js"></script>
 </body>
 </html>

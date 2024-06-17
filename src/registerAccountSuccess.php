@@ -17,11 +17,12 @@
         <div class="col-md-6 m-3 p-3">
             <h1 class="text-danger text-center mb-5">Parabêns por se registrar!</h1>
             <div class="bg-dark p-4 border border-1 rounded-5 mb-5">
-                <h5 class="text-light">
-                    Olá <?php session_start(); if(isset($_SESSION['username'])) echo $_SESSION['username']; unset($_SESSION['username']); ?>
-                    , Bem-vindo ao nosso sistema! 🎉 Estamos muito felizes por tê-lo conosco. Sua conta foi criada com sucesso e agora você 
+                <h5 class="text-light text-center">
+                    Olá <span class="text-warning"><?php session_start(); if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></span>,
+                    sua conta foi criada com <span class="text-warning">sucesso</span> e agora você 
                     pode aproveitar todos os recursos que oferecemos. Se precisar de ajuda ou tiver alguma dúvida, nossa equipe está 
-                    à disposição para ajudar. Obrigado por escolher a gente!
+                    à disposição para ajudar.
+                    <p class="pt-3 mt-3 border-top">E-mail e suporte: <span class="text-danger">system@suporte.com.br<span></p>
                 </h5>
             </div>
         </div>
